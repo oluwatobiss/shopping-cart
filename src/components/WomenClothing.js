@@ -4,32 +4,32 @@ import NavBar from "./NavBar";
 import Breadcrumb from "./Breadcrumb";
 import ProductCard from "./ProductCard";
 
-function AllProducts() {
-  const [allProductsData, setAllProductsData] = useState(null);
+function WomenClothing() {
+  const [womenClothingData, setWomenClothingData] = useState(null);
 
   useEffect(() => {
-      fetch("https://fakestoreapi.com/products")
+      fetch("https://fakestoreapi.com/products/category/women's%20clothing")
       .then(res => res.json())
-      .then(json => { setAllProductsData(json) })
+      .then(json => { setWomenClothingData(json) })
       .catch(() => console.log("Error fetching Data"))
   }, []);
 
   function getProductData() {
-    return allProductsData.map(i => <ProductCard key={uniqid()} title={i.title} price={i.price} imagesrc={i.image} />)
+    return womenClothingData.map(i => <ProductCard key={uniqid()} title={i.title} price={i.price} imagesrc={i.image} />)
   }
 
   return (
-    <div id="all-products-div">
+    <div id="women-clothing-div">
       <NavBar backgroundColor="white" textColor="black" />
       <header>
         <Breadcrumb />
-        <h1 className="prod-pg-title">ALL</h1>
+        <h1 className="prod-pg-title">WOMEN'S CLOTHING</h1>
       </header>
       <section className="products-section">
-        { allProductsData && getProductData() }
+        { womenClothingData && getProductData() }
       </section>
     </div>
   );
 }
 
-export default AllProducts;
+export default WomenClothing;

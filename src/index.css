@@ -117,6 +117,20 @@ header {
     font-size: .8rem;
 }
 
+.breadcrumb-link {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.breadcrumb-link::first-letter, .breadcrumb-last-pg::first-letter {
+    text-transform: uppercase;
+}
+
+.breadcrumb-last-pg {
+    display: inline-block;
+    color: dimgrey;
+}
+
 .prod-pg-title {
     margin-top: 3px;
 }

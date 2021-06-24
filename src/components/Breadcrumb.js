@@ -8,15 +8,15 @@ function Breadcrumb(props) {
 
     return (
         <div className="breadcrumb-div" aria-label="breadcrumb">
-            <span><Link to="/" style={{textDecoration:"underline"}}>Home</Link> / </span>
+            <span><Link to="/" className="breadcrumb-link">home</Link> / </span>
             {
                 pathToTextArr.map((text, index) => {
                     const currTextRoute = `/${pathToTextArr.slice(0, index + 1).join("/")}`;
                     const isLastInArr = index === pathToTextArr.length - 1;
 
                     return isLastInArr ? 
-                    <span key={ uniqid() } style={{color:"dimgrey"}}>{ text }</span> : 
-                    <span> / <Link key={ uniqid() } to={currTextRoute} style={{textDecoration:"underline"}}>{ text }</Link></span>;
+                    <span className="breadcrumb-last-pg" key={ uniqid() }>{ text }</span> : 
+                    <span><Link to={currTextRoute} className="breadcrumb-link" key={ uniqid() }>{ text }</Link> / </span>;
                 })
             }
         </div>

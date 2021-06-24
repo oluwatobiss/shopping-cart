@@ -5,6 +5,7 @@ import AllProducts from "./AllProducts";
 import WomenClothing from "./WomenClothing";
 import MenClothing from "./MenClothing";
 import Jewelry from "./Jewelry";
+import Electronics from "./Electronics";
 
 function Routes() {
   return (
@@ -15,6 +16,7 @@ function Routes() {
           <Route path="/women" component={WomenClothing} />
           <Route path="/men" component={MenClothing} />
           <Route path="/jewelry" component={Jewelry} />
+          <Route path="/electronics" component={Electronics} />
         </Switch>
     </BrowserRouter>
   );

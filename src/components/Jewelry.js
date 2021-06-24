@@ -4,32 +4,32 @@ import NavBar from "./NavBar";
 import Breadcrumb from "./Breadcrumb";
 import ProductCard from "./ProductCard";
 
-function MenClothing() {
-  const [menClothingData, setMenClothingData] = useState(null);
+function Jewelry() {
+  const [jewelryData, setJewelryData] = useState(null);
 
   useEffect(() => {
-      fetch("https://fakestoreapi.com/products/category/men's%20clothing")
+      fetch("https://fakestoreapi.com/products/category/jewelery")
       .then(res => res.json())
-      .then(json => { setMenClothingData(json) })
+      .then(json => { setJewelryData(json) })
       .catch(() => console.log("Error fetching Data"))
   }, []);
 
   function getProductData() {
-    return menClothingData.map(i => <ProductCard key={uniqid()} title={i.title} price={i.price} imagesrc={i.image} />)
+    return jewelryData.map(i => <ProductCard key={uniqid()} title={i.title} price={i.price} imagesrc={i.image} />)
   }
 
   return (
-    <div id="men-clothing-div">
+    <div id="jewelry-div">
       <NavBar backgroundColor="white" textColor="black" />
       <header>
         <Breadcrumb />
-        <h1 className="prod-pg-title">MEN'S CLOTHING</h1>
+        <h1 className="prod-pg-title">JEWELRY</h1>
       </header>
       <section className="products-section">
-        { menClothingData && getProductData() }
+        { jewelryData && getProductData() }
       </section>
     </div>
   );
 }
 
-export default MenClothing;
+export default Jewelry;

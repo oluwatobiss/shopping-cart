@@ -4,6 +4,7 @@ import App from "./App";
 import AllProducts from "./AllProducts";
 import WomenClothing from "./WomenClothing";
 import MenClothing from "./MenClothing";
+import Jewelry from "./Jewelry";
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
           <Route path="/all" component={AllProducts} />
           <Route path="/women" component={WomenClothing} />
           <Route path="/men" component={MenClothing} />
+          <Route path="/jewelry" component={Jewelry} />
         </Switch>
     </BrowserRouter>
   );

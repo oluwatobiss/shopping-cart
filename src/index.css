@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:wght@300;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:wght@300;400;500;800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -14,7 +14,6 @@ html, body, #root {
 
 nav {
     padding-top: 10px;
-    background-color: transparent;
     display: grid;
     grid-template-columns: 20% 70% 10%;
     align-items: center;
@@ -23,7 +22,10 @@ nav {
 
 a {
     text-decoration: none;
-    color: white;
+}
+
+a:visited {
+    color: black;
 }
 
 .logo {
@@ -47,7 +49,6 @@ a {
 .cart-total-items {
     margin-bottom: -6px;
     font-size: .75rem;
-    color: white;
 }
 
 #home-div {
@@ -62,8 +63,7 @@ a {
 }
 
 #tagline-article {
-    padding-top: 170px;
-    padding-left: 60px;
+    padding: 180px 0 180px 60px;
 }
 
 #main-tagline {
@@ -106,4 +106,53 @@ a {
 #tagline-btn:active {
     transform: translateY(5px) translateX(5px);
     transition: transform .2s;
+}
+
+header {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.breadcrumb-div {
+    font-size: .8rem;
+}
+
+.prod-pg-title {
+    margin-top: 3px;
+}
+
+.products-section {
+    padding: 50px 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 100px 70px;
+}
+
+.prod-card-div {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 250px;
+    font-size: .85rem;
+}
+
+.prod-image-div {
+    background-color: white;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: inherit;
+}
+
+.prod-info-div {
+    padding-left: 25px;
+}
+
+.prod-price {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.prod-title {
+    margin-top: 7px;
 }

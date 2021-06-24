@@ -1,11 +1,15 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
+import AllProducts from "./AllProducts";
 
 function Routes() {
   return (
     <BrowserRouter>
-        <Route path="/" component={App} />
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/all" component={AllProducts} />
+        </Switch>
     </BrowserRouter>
   );
 }

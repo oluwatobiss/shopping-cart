@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:wght@300;400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:wght@300;400;500;600;800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -22,9 +22,6 @@ nav {
 
 a {
     text-decoration: none;
-}
-
-a:visited {
     color: black;
 }
 
@@ -135,21 +132,22 @@ header {
     margin-top: 3px;
 }
 
-.products-section {
+.products-article {
     padding: 50px 200px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-gap: 100px 70px;
 }
 
-.prod-card-div {
+.prod-sum-card-link {
     display: grid;
     grid-template-columns: 40% 60%;
     height: 250px;
     font-size: .85rem;
+    color: black;
 }
 
-.prod-image-div {
+.prod-sum-img-div, .prod-full-desc-image-div {
     background-color: white;
     background-size: contain;
     background-position: center;
@@ -157,16 +155,145 @@ header {
     height: inherit;
 }
 
-.prod-info-div {
+.prod-sum-info-div {
     padding-left: 25px;
 }
 
-.prod-price {
+.prod-sum-price {
     margin-bottom: 0;
     font-weight: 500;
     font-size: .95rem;
 }
 
-.prod-title {
+.prod-sum-title {
     margin-top: 7px;
+}
+
+.added-to-bask-alert-modal-bg {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.55);
+}
+
+.added-to-bask-alert-div {
+    position: relative;
+    top: 43vh;
+    border: 1px solid #c3e6cb;
+    background-color: #d4edda;
+    border-radius: 0.25rem;
+    margin: 0 auto;
+    padding: 0 18px;
+    width: 50%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.added-to-bask-chk-mark-span {
+    background-color: #155724;
+    color: #d4edda;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.added-to-bask-text-span {
+    font-size: 1.1rem;
+}
+
+.view-bask-btn {
+    background-color: transparent;
+    padding: 8px 23px;
+    border: 1.6px solid #155724;
+    color: #155724;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: .92rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.view-bask-btn:hover {
+    background-color: #155724;
+    color: #d4edda;
+}
+
+.close-added-to-bask-alert-modal {
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.close-added-to-bask-alert-modal:hover {
+    color: #155724;
+}
+
+.product-full-info-article {
+    padding: 50px;
+}
+
+.prod-full-desc-card-article {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 50%;
+    height: 350px;
+    font-size: .85rem;
+    color: black;
+}
+
+.prod-full-desc-info-div {
+    padding-left: 40px;
+}
+
+.prod-full-desc-price {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.prod-full-desc-title {
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.prod-full-desc-excerpt {
+    padding-bottom: 20px;
+}
+
+.add-to-bask-btn-offset-border {
+    border: 1px solid black;
+    margin-top: 6px;
+    margin-left: 6px;
+    width: 195px;
+    height: 55px;
+}
+
+.add-to-bask-btn {
+    background-color: black;
+    margin-top: -6px;
+    margin-left: -6px;
+    padding: 15px 30px;
+    width: 195px;
+    height: 55px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: .92rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.add-to-bask-btn:active {
+    transform: translateY(5px) translateX(5px);
+    transition: transform .2s;
 }

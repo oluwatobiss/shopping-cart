@@ -6,17 +6,19 @@ import WomenClothing from "./WomenClothing";
 import MenClothing from "./MenClothing";
 import Jewelry from "./Jewelry";
 import Electronics from "./Electronics";
+import ProdInfo from "./ProdInfo";
 
 function Routes() {
   return (
     <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route path="/all" component={AllProducts} />
-          <Route path="/women" component={WomenClothing} />
-          <Route path="/men" component={MenClothing} />
-          <Route path="/jewelry" component={Jewelry} />
-          <Route path="/electronics" component={Electronics} />
+          <Route exact path="/all" component={AllProducts} />
+          <Route exact path="/women" component={WomenClothing} />
+          <Route exact path="/men" component={MenClothing} />
+          <Route exact path="/jewelry" component={Jewelry} />
+          <Route exact path="/electronics" component={Electronics} />
+          <Route path="/:category/:productid" component={ProdInfo} />
         </Switch>
     </BrowserRouter>
   );

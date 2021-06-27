@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import uniqid from "uniqid";
 import NavBar from "./NavBar";
 import Breadcrumb from "./Breadcrumb";
-import ProductCard from "./ProductCard";
+import ProdSummaryCard from "./ProdSummaryCard";
 
 function MenClothing() {
   const [menClothingData, setMenClothingData] = useState(null);
@@ -15,20 +15,20 @@ function MenClothing() {
   }, []);
 
   function getProductData() {
-    return menClothingData.map(i => <ProductCard key={uniqid()} title={i.title} price={i.price} imagesrc={i.image} />)
+    return menClothingData.map(i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />)
   }
 
   return (
-    <div id="men-clothing-div">
+    <section id="men-clothing-section">
       <NavBar backgroundColor="white" textColor="black" />
       <header>
         <Breadcrumb />
         <h1 className="prod-pg-title">MEN'S CLOTHING</h1>
       </header>
-      <section className="products-section">
+      <article className="products-article">
         { menClothingData && getProductData() }
-      </section>
-    </div>
+      </article>
+    </section>
   );
 }
 

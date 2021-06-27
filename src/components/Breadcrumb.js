@@ -12,11 +12,17 @@ function Breadcrumb(props) {
             {
                 pathToTextArr.map((text, index) => {
                     const currTextRoute = `/${pathToTextArr.slice(0, index + 1).join("/")}`;
+                    const jewelryOrCurrTextRoute = currTextRoute === "/jewelery" ? "/jewelry" : currTextRoute;
+                    const jewelryOrText = text === "jewelery" ? "jewelry" : text;
                     const isLastInArr = index === pathToTextArr.length - 1;
 
                     return isLastInArr ? 
                     <span className="breadcrumb-last-pg" key={ uniqid() }>{ text }</span> : 
-                    <span><Link to={currTextRoute} className="breadcrumb-link" key={ uniqid() }>{ text }</Link> / </span>;
+                    <span key={ uniqid() }>
+                        <Link to={ jewelryOrCurrTextRoute } className="breadcrumb-link">
+                            { jewelryOrText }
+                        </Link>{ " / " }
+                    </span>;
                 })
             }
         </div>

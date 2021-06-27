@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 import NavBar from "./NavBar";
 import Breadcrumb from "./Breadcrumb";
 import ProdSummaryCard from "./ProdSummaryCard";
+import Footer from "./Footer";
 
 function Jewelry() {
   const [jewelryData, setJewelryData] = useState(null);
@@ -28,6 +29,7 @@ function Jewelry() {
       <article className="products-article">
         { jewelryData && getProductData() }
       </article>
+      <Footer />
     </section>
   );
 }

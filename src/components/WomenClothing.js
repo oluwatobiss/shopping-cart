@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 import NavBar from "./NavBar";
 import Breadcrumb from "./Breadcrumb";
 import ProdSummaryCard from "./ProdSummaryCard";
+import Footer from "./Footer";
 
 function WomenClothing() {
   const [womenClothingData, setWomenClothingData] = useState(null);
@@ -28,6 +29,7 @@ function WomenClothing() {
       <article className="products-article">
         { womenClothingData && getProductData() }
       </article>
+      <Footer />
     </section>
   );
 }

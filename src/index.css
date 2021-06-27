@@ -12,6 +12,16 @@ html, body, #root {
     font-weight: 300;
 }
 
+#all-products-section,
+#women-clothing-section,
+#men-clothing-section,
+#jewelry-section,
+#electronics-section, 
+.product-info-section {
+    position: relative;
+    min-height: 100vh;
+}
+
 nav {
     padding-top: 10px;
     display: grid;
@@ -133,7 +143,7 @@ header {
 }
 
 .products-article {
-    padding: 50px 200px;
+    padding: 60px 200px 130px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-gap: 100px 70px;
@@ -237,16 +247,12 @@ header {
     color: #155724;
 }
 
-.product-full-info-article {
-    padding: 50px;
-}
-
 .prod-full-desc-card-article {
     margin: 0 auto;
+    padding: 20px 50px 150px;
     display: grid;
     grid-template-columns: 40% 60%;
     width: 50%;
-    height: 350px;
     font-size: .85rem;
     color: black;
 }
@@ -296,4 +302,25 @@ header {
 .add-to-bask-btn:active {
     transform: translateY(5px) translateX(5px);
     transition: transform .2s;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    background-color: black;
+}
+
+.footer-link {
+    display: inline-block;
+    width: inherit;
+    text-align: center;
+    font-size: .85rem;
+    color: white;
+}
+
+.footer-link:hover {
+    color: #F7CF7E;
 }

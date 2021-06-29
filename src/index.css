@@ -16,7 +16,8 @@ html, body, #root {
 #women-clothing-section,
 #men-clothing-section,
 #jewelry-section,
-#electronics-section, 
+#electronics-section,
+#cart-section, 
 .product-info-section {
     position: relative;
     min-height: 100vh;
@@ -95,6 +96,7 @@ a {
 }
 
 #tagline-btn {
+    display: inline-block;
     background-color: white;
     margin-top: -6px;
     margin-left: -6px;
@@ -157,12 +159,13 @@ header {
     color: black;
 }
 
-.prod-sum-img-div, .prod-full-desc-image-div {
+.prod-sum-img-div, .prod-full-desc-image-div, .shopped-item-image-div {
     background-color: white;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: inherit;
+    height: 90%;
+    align-self: center;
 }
 
 .prod-sum-info-div {
@@ -179,7 +182,7 @@ header {
     margin-top: 7px;
 }
 
-.added-to-bask-alert-modal-bg {
+#added-to-bask-alert-modal-bg {
     display: none;
     position: fixed;
     width: 100%;
@@ -190,7 +193,7 @@ header {
     background-color: rgba(0,0,0,0.55);
 }
 
-.added-to-bask-alert-div {
+#added-to-bask-alert-div {
     position: relative;
     top: 43vh;
     border: 1px solid #c3e6cb;
@@ -205,7 +208,7 @@ header {
     justify-content: space-between;
 }
 
-.added-to-bask-chk-mark-span {
+#added-to-bask-chk-mark-span {
     background-color: #155724;
     color: #d4edda;
     border-radius: 50%;
@@ -216,11 +219,11 @@ header {
     font-size: 1.5rem;
 }
 
-.added-to-bask-text-span {
+#added-to-bask-text-span {
     font-size: 1.1rem;
 }
 
-.view-bask-btn {
+#view-bask-btn {
     background-color: transparent;
     padding: 8px 23px;
     border: 1.6px solid #155724;
@@ -232,18 +235,18 @@ header {
     cursor: pointer;
 }
 
-.view-bask-btn:hover {
+#view-bask-btn:hover {
     background-color: #155724;
     color: #d4edda;
 }
 
-.close-added-to-bask-alert-modal {
+#close-added-to-bask-alert-modal {
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
 }
 
-.close-added-to-bask-alert-modal:hover {
+#close-added-to-bask-alert-modal:hover {
     color: #155724;
 }
 
@@ -304,19 +307,149 @@ header {
     transition: transform .2s;
 }
 
+#shopped-items-and-total-price-div {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding: 30px 30px 150px;
+}
+
+.shopped-item-card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 0 auto 50px;
+    padding: 15px;
+    border: 1px solid dimgrey;
+    width: 70%;
+    height: 250px;
+    font-size: .85rem;
+    color: black;
+}
+
+.shopped-item-info-div {
+    padding-left: 25px;
+}
+
+.shopped-item-price {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.shopped-item-title {
+    margin-top: 7px;
+}
+
+.shopped-item-quantity {
+    padding-left: 7px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid dimgrey;
+}
+
+.shopped-item-quantity:focus {
+    outline: 0; 
+}
+
+.shopped-item-remove-div {
+    padding-top: 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shopped-item-remove-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+.shopped-item-remove-text {
+    padding-left: 7px;
+}
+
+#total-qty-and-price-div {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-row-gap: 7px;
+}
+
+.summary-total {
+    font-weight: 600;
+}
+
+#payment-method-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#bank-card-btn-offset-border {
+    border: 1px solid black;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 90%;
+    height: 50px;
+}
+
+#bank-card-btn {
+    background-color: black;
+    margin-top: -4px;
+    margin-left: -4px;
+    padding: 15px 30px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.08rem;
+    line-height: 1.08rem;
+    cursor: pointer;
+}
+
+#bank-card-btn:active {
+    transform: translateY(4px) translateX(4px);
+    transition: transform .2s;
+}
+
+#paypal-btn {
+    margin-top: 40px;
+    padding: 15px 30px;
+    width: 90%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: transparent;
+    background-image: url("./assets/image/paypal-784404-image-by-copyrightfree-pictures-from-pixabay.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#paypal-btn:active {
+    transform:scale(.97, .97);
+    transition: transform .2s;
+}
+
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 3rem;
-    line-height: 3rem;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-link {
-    display: inline-block;
-    width: inherit;
-    text-align: center;
     font-size: .85rem;
     color: white;
 }

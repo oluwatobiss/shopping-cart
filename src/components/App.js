@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
         <h1 id="main-tagline">SPARK UP YOUR STYLE</h1>
         <p id="sub-tagline">Add glamor to your clothing, jewelry, and electronic collections.</p>
         <div id="tagline-btn-offset-border">
-          <button id="tagline-btn">SHOP NOW</button>
+          <Link to="/all" id="tagline-btn">SHOP NOW</Link>
         </div>
       </article>
     </div>

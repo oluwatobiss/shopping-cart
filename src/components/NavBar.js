@@ -26,7 +26,7 @@ function NavBar(props) {
                     <Link style={navTextStyle} to="/electronics">Electronics</Link>
                 </li>
             </ul>
-            <Link className="cart-link" to="/">
+            <Link className="cart-link" to="/basket">
                 <span className="cart-total-items" style={navTextStyle}>23</span>
                 <span><BiCartAlt style={shoppingCartStyle} /></span>
             </Link>

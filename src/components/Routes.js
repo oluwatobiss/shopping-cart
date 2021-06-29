@@ -7,6 +7,7 @@ import MenClothing from "./MenClothing";
 import Jewelry from "./Jewelry";
 import Electronics from "./Electronics";
 import ProdInfo from "./ProdInfo";
+import Basket from "./Basket";
 
 function Routes() {
   return (
@@ -18,7 +19,8 @@ function Routes() {
           <Route exact path="/men" component={MenClothing} />
           <Route exact path="/jewelry" component={Jewelry} />
           <Route exact path="/electronics" component={Electronics} />
-          <Route path="/:category/:productid" component={ProdInfo} />
+          <Route exact path="/:category/:productid" component={ProdInfo} />
+          <Route exact path="/basket" component={Basket} />
         </Switch>
     </BrowserRouter>
   );

@@ -7,8 +7,6 @@ import Footer from "./Footer";
 
 function ProdInfo({ match }) {
     const [prodData, setProdData] = useState(null);
-    console.log(match)
-    console.log(match.params.productid)
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${match.params.productid}`)
@@ -18,7 +16,7 @@ function ProdInfo({ match }) {
     }, []);
 
     return (
-        <section class="product-info-section">
+        <section className="product-info-section">
             <NavBar backgroundColor="white" textColor="black" />
             <header>
             <Breadcrumb />
@@ -28,10 +26,10 @@ function ProdInfo({ match }) {
             {
                 prodData && 
                 <ProdFullDescCard 
+                    id={prodData.id} 
                     title={prodData.title} 
                     price={prodData.price} 
                     description={prodData.description} 
-                    category={prodData.category} 
                     imagesrc={prodData.image} 
                 />
             }

@@ -6,6 +6,7 @@ function ProdFullDescCard(props) {
     const prodImgDivStyle = { backgroundImage: `url(${props.imagesrc})` };
     const itemToBaskAlertModalBg = document.getElementById("added-to-bask-alert-modal-bg");
     const navBarTotItemsDisp = document.querySelector(".cart-total-items");
+    let totalItemsInShoppingBasket = null;
 
     function handleBtnClick() {
         let indexOfItem = null;
@@ -15,7 +16,12 @@ function ProdFullDescCard(props) {
         });
 
         if (itemAlreadyInShoppingBasket) {
-            shoppingBasket[indexOfItem].qty += 1;
+            if (shoppingBasket[indexOfItem].qty === 10) {
+                alert("Sorry, You are limited to 10 pieces of each item.");
+                return;
+            } else {
+                shoppingBasket[indexOfItem].qty += 1;
+            }            
         } else {
             shoppingBasket.push({
                 id: props.id,
@@ -26,7 +32,8 @@ function ProdFullDescCard(props) {
             });
         }
         
-        navBarTotItemsDisp.innerText = shoppingBasket.reduce((acc, curr) => acc + curr.qty, 0);
+        totalItemsInShoppingBasket = shoppingBasket.reduce((acc, curr) => acc + curr.qty, 0);
+        navBarTotItemsDisp.innerText = totalItemsInShoppingBasket > 99 ? "99+" : totalItemsInShoppingBasket;
         itemToBaskAlertModalBg.style.display = "block";
     }
 

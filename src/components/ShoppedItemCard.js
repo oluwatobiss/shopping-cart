@@ -4,10 +4,12 @@ function ShoppedItemCard(props) {
     const prodImgDivStyle = { backgroundImage: `url(${props.imgsrc})` };
 
     function handleQtyChange(e) {
-        if (e.target.value > props.qty) {
-            props.increaseItemQty(e);
+        if (e.target.value > 10) {
+            e.target.value = props.qty;
+            alert("Sorry, You are limited to 10 pieces of each item.");
+            return;
         } else {
-            props.decreaseItemQty(e);
+            e.target.value > props.qty ? props.increaseItemQty(e) : props.decreaseItemQty(e)
         }
     }
 

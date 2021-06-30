@@ -29,7 +29,9 @@ function NavBar(props) {
                 </li>
             </ul>
             <Link className="cart-link" to="/basket">
-                <span className="cart-total-items" style={navTextStyle}>{totalItemsInShoppingBasket}</span>
+                <span className="cart-total-items" style={navTextStyle}>
+                    {totalItemsInShoppingBasket > 99 ? "99+" : totalItemsInShoppingBasket}
+                </span>
                 <span><BiCartAlt style={shoppingCartStyle} /></span>
             </Link>
         </nav>

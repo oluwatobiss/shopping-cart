@@ -16,7 +16,9 @@ function MenClothing() {
   }, []);
 
   function getProductData() {
-    return menClothingData.map(i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />)
+    return menClothingData.map(
+      i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />
+    )
   }
 
   return (
@@ -31,7 +33,7 @@ function MenClothing() {
       </article>
       <Footer />
     </section>
-  );
+  )
 }
 
 export default MenClothing;

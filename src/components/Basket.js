@@ -36,7 +36,7 @@ function Basket() {
         updateTotalItems();
     }
 
-    function handleBankCardBtnClick(paymentMode) {
+    function handlePaymentBtnClick(paymentMode) {
         (totalPrice > 0) && alert(`Payment successful! Your real ${paymentMode} has not been debited. Thank you.`);
     }
 
@@ -80,17 +80,17 @@ function Basket() {
                     <section id="payment-method-section">
                         <h3 id="payment-method-heading">PAYMENT METHOD</h3>
                         <div id="bank-card-btn-offset-border">
-                            <button id="bank-card-btn" onClick={() => handleBankCardBtnClick("card")}>
+                            <button id="bank-card-btn" className="btn" onClick={() => handlePaymentBtnClick("card")}>
                                 <SiMastercard /> <span id="bank-card-btn-text">Bank Card</span>
                             </button>
                         </div>
-                        <button id="paypal-btn" onClick={() => handleBankCardBtnClick("PayPal account")}></button>
+                        <button id="paypal-btn" className="btn" onClick={() => handlePaymentBtnClick("PayPal account")}></button>
                     </section>
                 </div>
             </div>
             <Footer />
         </section>
-    );
+    )
 }
 
 export default Basket;

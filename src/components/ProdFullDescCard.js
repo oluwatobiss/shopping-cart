@@ -4,7 +4,7 @@ export const shoppingBasket = [];
 
 function ProdFullDescCard(props) {
     const prodImgDivStyle = { backgroundImage: `url(${props.imagesrc})` };
-    const itemToBaskAlertModalBg = document.getElementById("added-to-bask-alert-modal-bg");
+    const itemToBaskAlertModalBg = document.getElementById("added-to-bask-modal-bg");
     const navBarTotItemsDisp = document.querySelector(".cart-total-items");
     let totalItemsInShoppingBasket = null;
 
@@ -39,7 +39,7 @@ function ProdFullDescCard(props) {
 
     useEffect(() => {
         function closeItemToBaskAlertModalBg(objClicked) {
-            const closeAddedToBaskAlertModalBtn = objClicked.target.closest("#close-added-to-bask-alert-modal");
+            const closeAddedToBaskAlertModalBtn = objClicked.target.closest("#close-added-to-bask-modal-icon");
             if ((objClicked.target === itemToBaskAlertModalBg) || (closeAddedToBaskAlertModalBtn)) {
                 itemToBaskAlertModalBg.style.display = "none";
             }
@@ -51,17 +51,17 @@ function ProdFullDescCard(props) {
 
     return (
         <article className="prod-full-desc-card-article">
-            <div className="prod-full-desc-image-div" style={ prodImgDivStyle }></div>
+            <div className="prod-full-desc-image-div" style={prodImgDivStyle}></div>
             <div className="prod-full-desc-info-div">
                 <p className="prod-full-desc-price">${props.price}</p>
                 <p className="prod-full-desc-title">{props.title}</p>
                 <p className="prod-full-desc-excerpt">{props.description}</p>
                 <div className="add-to-bask-btn-offset-border">
-                    <button className="add-to-bask-btn" onClick={handleBtnClick}>Add to Basket</button>
+                    <button className="btn add-to-bask-btn" onClick={handleBtnClick}>Add to Basket</button>
                 </div>
             </div>
         </article>
-    );
+    )
 }
 
 export default ProdFullDescCard;

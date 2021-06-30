@@ -20,8 +20,8 @@ function ProdInfo({ match }) {
         <section className="product-info-section">
             <NavBar backgroundColor="white" textColor="black" />
             <header>
-            <Breadcrumb />
-            <h1 className="prod-pg-title">PRODUCT INFO</h1>
+                <Breadcrumb />
+                <h1 className="prod-pg-title">PRODUCT INFO</h1>
             </header>
             <ItemToBaskAlertModal />
             {
@@ -36,7 +36,7 @@ function ProdInfo({ match }) {
             }
             <Footer />
         </section>
-    );
+    )
 }
 
 export default ProdInfo;

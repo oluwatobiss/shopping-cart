@@ -23,7 +23,7 @@ function Routes() {
           <Route exact path="/basket" component={Basket} />
         </Switch>
     </HashRouter>
-  );
+  )
 }
 
 export default Routes;

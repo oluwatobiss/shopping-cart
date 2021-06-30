@@ -11,7 +11,7 @@ function NavBar(props) {
     return (
         <nav style={navStyle}>
             <Link className="logo" style={navTextStyle} to="/">transform.</Link>
-            <ul id="nav-pgs-links">
+            <ul className="nav-pgs-links">
                 <li>
                     <Link style={navTextStyle} to="/all">All</Link>
                 </li>
@@ -35,7 +35,7 @@ function NavBar(props) {
                 <span><BiCartAlt style={shoppingCartStyle} /></span>
             </Link>
         </nav>
-    );
+    )
 }
   
 export default NavBar;

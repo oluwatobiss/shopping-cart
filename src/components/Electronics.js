@@ -33,7 +33,7 @@ function Electronics() {
       </article>
       <Footer />
     </section>
-  );
+  )
 }
 
 export default Electronics;

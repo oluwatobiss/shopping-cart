@@ -15,8 +15,10 @@ function AllProducts() {
       .catch(() => console.log("Error fetching Data"))
   }, []);
 
-  function getProductData() {
-    return allProductsData.map(i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />)
+  function showAllProducts() {
+    return allProductsData.map(
+      i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />
+    )
   }
 
   return (
@@ -27,11 +29,11 @@ function AllProducts() {
         <h1 className="prod-pg-title">ALL</h1>
       </header>
       <article className="products-article">
-        { allProductsData && getProductData() }
+        { allProductsData && showAllProducts() }
       </article>
       <Footer />
     </section>
-  );
+  )
 }
 
 export default AllProducts;

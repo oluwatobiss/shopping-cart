@@ -21,7 +21,7 @@ function ProdSummaryCard(props) {
                 <p className="prod-sum-title">{props.title}</p>
             </div>
         </Link>
-    );
+    )
 }
 
 export default ProdSummaryCard;

@@ -16,7 +16,9 @@ function Jewelry() {
   }, []);
 
   function getProductData() {
-    return jewelryData.map(i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />)
+    return jewelryData.map(
+      i => <ProdSummaryCard key={uniqid()} id={i.id} title={i.title} price={i.price} category={i.category} imagesrc={i.image} />
+    )
   }
 
   return (
@@ -31,7 +33,7 @@ function Jewelry() {
       </article>
       <Footer />
     </section>
-  );
+  )
 }
 
 export default Jewelry;

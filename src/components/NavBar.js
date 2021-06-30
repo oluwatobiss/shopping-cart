@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { BiCartAlt } from "react-icons/bi";
+import { shoppingBasket } from "./ProdFullDescCard";
 
 function NavBar(props) {
     const shoppingCartStyle = { fontSize: "1.3rem", color: props.textColor };
     const navStyle = { backgroundColor: props.backgroundColor };
     const navTextStyle = { color: props.textColor };
+    const totalItemsInShoppingBasket = shoppingBasket.reduce((acc, curr) => acc + curr.qty, 0);
 
     return (
         <nav style={navStyle}>
@@ -27,7 +29,7 @@ function NavBar(props) {
                 </li>
             </ul>
             <Link className="cart-link" to="/basket">
-                <span className="cart-total-items" style={navTextStyle}>23</span>
+                <span className="cart-total-items" style={navTextStyle}>{totalItemsInShoppingBasket}</span>
                 <span><BiCartAlt style={shoppingCartStyle} /></span>
             </Link>
         </nav>

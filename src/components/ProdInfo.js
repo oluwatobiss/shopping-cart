@@ -7,13 +7,14 @@ import Footer from "./Footer";
 
 function ProdInfo({ match }) {
     const [prodData, setProdData] = useState(null);
+    const productID = match.params.productid;
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${match.params.productid}`)
+        fetch(`https://fakestoreapi.com/products/${productID}`)
         .then(res => res.json())
         .then(json => setProdData(json))
         .catch(() => console.log("Error fetching Data"))
-    }, []);
+    }, [productID]);
 
     return (
         <section className="product-info-section">

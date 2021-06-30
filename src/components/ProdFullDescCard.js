@@ -5,6 +5,7 @@ export const shoppingBasket = [];
 function ProdFullDescCard(props) {
     const prodImgDivStyle = { backgroundImage: `url(${props.imagesrc})` };
     const itemToBaskAlertModalBg = document.getElementById("added-to-bask-alert-modal-bg");
+    const navBarTotItemsDisp = document.querySelector(".cart-total-items");
 
     function handleBtnClick() {
         let indexOfItem = null;
@@ -14,7 +15,7 @@ function ProdFullDescCard(props) {
         });
 
         if (itemAlreadyInShoppingBasket) {
-            shoppingBasket[indexOfItem].quantity += 1;
+            shoppingBasket[indexOfItem].qty += 1;
         } else {
             shoppingBasket.push({
                 id: props.id,
@@ -25,6 +26,7 @@ function ProdFullDescCard(props) {
             });
         }
         
+        navBarTotItemsDisp.innerText = shoppingBasket.reduce((acc, curr) => acc + curr.qty, 0);
         itemToBaskAlertModalBg.style.display = "block";
     }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
 import AllProducts from "./AllProducts";
 import WomenClothing from "./WomenClothing";
@@ -11,7 +11,7 @@ import Basket from "./Basket";
 
 function Routes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/all" component={AllProducts} />
@@ -22,7 +22,7 @@ function Routes() {
           <Route exact path="/:category/:productid" component={ProdInfo} />
           <Route exact path="/basket" component={Basket} />
         </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

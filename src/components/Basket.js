@@ -81,7 +81,7 @@ function Basket() {
                         <h3 id="payment-method-heading">PAYMENT METHOD</h3>
                         <div id="bank-card-btn-offset-border">
                             <button id="bank-card-btn" onClick={() => handleBankCardBtnClick("card")}>
-                                <SiMastercard /> Bank Card
+                                <SiMastercard /> <span id="bank-card-btn-text">Bank Card</span>
                             </button>
                         </div>
                         <button id="paypal-btn" onClick={() => handleBankCardBtnClick("PayPal account")}></button>

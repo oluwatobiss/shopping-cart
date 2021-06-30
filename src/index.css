@@ -83,7 +83,7 @@ a {
 }
 
 #sub-tagline {
-    margin-top: 0;
+    margin: 0 0 20px;
     padding-bottom: 8px;
     font-size: .935rem;
 }
@@ -93,20 +93,21 @@ a {
     margin-top: 6px;
     margin-left: 6px;
     width: 170px;
-    height: 55px;
+    height: 52px;
 }
 
 #tagline-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     margin-top: -6px;
     margin-left: -6px;
     padding: 15px 30px;
     width: 170px;
-    height: 55px;
+    height: 52px;
     border: none;
     color: black;
-    text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     font-weight: 400;
@@ -400,6 +401,9 @@ header {
 }
 
 #bank-card-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
     margin-top: -4px;
     margin-left: -4px;
@@ -410,14 +414,17 @@ header {
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 1.08rem;
-    line-height: 1.08rem;
+    font-size: 1.05rem;
     cursor: pointer;
 }
 
 #bank-card-btn:active {
     transform: translateY(4px) translateX(4px);
     transition: transform .2s;
+}
+
+#bank-card-btn-text {
+    padding-left: 5px;
 }
 
 #paypal-btn {
